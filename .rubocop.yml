@@ -13,3 +13,8 @@ Metrics/BlockLength:
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: double_quotes
+
+Style/BlockComments:
+  Exclude:
+    - spec/spec_helper.rb
+
