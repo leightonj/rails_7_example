@@ -1,0 +1,17 @@
+require: rubocop-rails
+
+AllCops:
+  NewCops: enable
+  # Exclude:
+  #   - bin/**/**
+  #   - config.ru
+  #   - config/puma.rb
+  #   - config/boot.rb
+
+Metrics/BlockLength:
+  Exclude:
+    - config/environments/*
+
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
