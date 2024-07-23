@@ -3,14 +3,7 @@
 require "rails_helper"
 
 RSpec.describe "users/edit" do
-  let(:user) do
-    User.create!(
-      first_name: "MyString",
-      last_name: "MyString",
-      email: "MyString@test.com",
-      password: "passwod01!*!"
-    )
-  end
+  let(:user) { create(:user) }
 
   before do
     assign(:user, user)

@@ -19,11 +19,21 @@ RSpec.describe "/users" do
   # User. As you add validations to User, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) do
-    skip("Add a hash of attributes valid for your model")
+    {
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      email: Faker::Internet.email,
+      password: Faker::Internet.password,
+    }
   end
 
   let(:invalid_attributes) do
-    skip("Add a hash of attributes invalid for your model")
+    {
+      first_name: Faker::Name.first_name,
+      last_name: Faker::Name.last_name,
+      email: "",
+      password: Faker::Internet.password,
+    }
   end
 
   describe "GET /index" do
@@ -66,6 +76,7 @@ RSpec.describe "/users" do
       end
 
       it "redirects to the created user" do
+        skip("Devise handles")
         post users_url, params: { user: valid_attributes }
         expect(response).to redirect_to(user_url(User.last))
       end
@@ -88,14 +99,14 @@ RSpec.describe "/users" do
   describe "PATCH /update" do
     context "with valid parameters" do
       let(:new_attributes) do
-        skip("Add a hash of attributes valid for your model")
+        { first_name: Faker::Name.first_name }
       end
 
       it "updates the requested user" do
         user = User.create! valid_attributes
         patch user_url(user), params: { user: new_attributes }
         user.reload
-        skip("Add assertions for updated state")
+        expect(user.first_name).to eq(new_attributes[:first_name])
       end
 
       it "redirects to the user" do
