@@ -8,12 +8,14 @@ RSpec.describe "users/index" do
              User.create!(
                first_name: "First Name",
                last_name: "Last Name",
-               email: "Email"
+               email: "email@test.com",
+               password: "PAssword01!*!"
              ),
              User.create!(
                first_name: "First Name",
                last_name: "Last Name",
-               email: "Email"
+               email: "email2@test.com",
+               password: "PAssword01!*!"
              )
            ])
   end

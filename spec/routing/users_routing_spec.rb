@@ -21,6 +21,7 @@ RSpec.describe UsersController do
     end
 
     it "routes to #create" do
+      skip("Managed by devise")
       expect(post: "/users").to route_to("users#create")
     end
 

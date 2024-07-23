@@ -7,7 +7,8 @@ RSpec.describe "users/edit" do
     User.create!(
       first_name: "MyString",
       last_name: "MyString",
-      email: "MyString"
+      email: "MyString@test.com",
+      password: "passwod01!*!"
     )
   end
 
